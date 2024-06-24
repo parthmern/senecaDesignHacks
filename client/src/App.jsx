@@ -1,16 +1,12 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import { LampContainer, LampDemo } from './components/ui/lamp'
+
+import HomePage from "./components/pages/HomePage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      <span>hii</span>
-      <LampDemo />
-    </div>
-  )
+    <HomePage />
+  );
 }
 
-export default App
+export default App;

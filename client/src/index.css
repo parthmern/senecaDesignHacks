@@ -3,5 +3,35 @@
 @tailwind utilities;
 
 body{
-  background-color: rgb(67, 28, 28);
+  background-color: #020617;
+  overflow-x: hidden;
+}
+
+.headingFont{
+  font-family: 'headingFont', sans-serif;
+}
+
+.headingBg{
+  background-image: linear-gradient(to right top, rgba(216, 180, 254, 0.8), rgba(255, 255, 255, 0.9));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+@font-face {
+  font-family: 'headingFont';
+  src: url('../src/assets/fonts/cd-semi.otf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'subheadingFont';
+  src: url('../src/assets/fonts/jakarta.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.subheadingFont{
+  font-family: 'subheadingFont', sans-serif;
 }
