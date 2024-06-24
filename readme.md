@@ -1,0 +1,6 @@
+- landing page
+- event page - for admin to do changes 
+- event details page
+- about page
+- newsletter and joined people's mail sender
+- 
