@@ -17,6 +17,11 @@ const HomePage = () => {
         <GradOne />
         <GradMid />
         <GradTwo />
+
+        <div className='glow text-white text-3xl absolute left-20 top-10 japanFont'>
+          SDC
+        </div>
+
       </div>
 
       <div className="flex flex-col items-center justify-center w-[100vh]  mx-auto mt-40">

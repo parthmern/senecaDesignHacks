@@ -9,11 +9,14 @@ import { GradTwo } from "../common/GradTwo";
 const AboutusPage = () => {
   return (
     <div className="relative  z-[-50] ">
+                <div className='glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
+          SDC
+        </div>
         <div className="opacity-30 ">
         <GridSmallBackgroundDemo className=" bg-opacity-25 " />
         </div>
       <div className="  ">
-        <div className="pt-6 font-bold mb-3 text-lg md:text-6xl headingFont bg-clip-text text-transparent bg-gradient-to-b from-purple-300/90 to-white/90 text-center">
+        <div className="pt-16 font-bold mb-3 text-lg md:text-6xl headingFont bg-clip-text text-transparent bg-gradient-to-b from-purple-300/90 to-white/90 text-center">
           Who we are ?
         </div>
         <div
