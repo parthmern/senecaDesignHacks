@@ -16,6 +16,10 @@ const eventSchema = new mongoose.Schema(
             default: Date.now,
         },
 
+        img : {
+            type : String ,
+        },
+
         links: [
             {
                 title: {
