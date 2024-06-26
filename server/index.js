@@ -13,6 +13,11 @@ app.get('/',(request,response)=>{
 dbConnect();
 
 
+// routes
+const eventRoute = require("./routes/eventRoute");
+app.use("/event", eventRoute);
+
+
 app.listen(3000, ()=>{
     console.log("server started at port number 3000");
 })
