@@ -25,8 +25,6 @@ const createEvent = async (req, res) => {
         const uploaded = await uploadFileToCloudinary(file, "senecaDesignHacks");
         console.log("uploaded==>", uploaded.secure_url);
 
-
-
         const createdEvent = await events.create({
             name,
             desc,

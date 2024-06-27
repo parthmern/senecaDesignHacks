@@ -18,6 +18,21 @@ const workshopSchema = new Schema({
   info: {
     type: String,
   },
+  img : {
+    type : String ,
+  },
+  links: [
+    {
+        title: {
+            type: String,
+            
+        },
+        link: {
+            type: String,
+            
+        }
+    }
+  ]
 });
 
 const Workshop = mongoose.model("Workshop", workshopSchema);
