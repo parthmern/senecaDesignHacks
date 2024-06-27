@@ -9,7 +9,7 @@ import { GradTwo } from "../common/GradTwo";
 const AboutusPage = () => {
   return (
     <div className="relative  z-[-50] ">
-                <div className='glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
+        <div className='glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
           SDC
         </div>
         <div className="opacity-30 ">

@@ -59,6 +59,9 @@ const getAllEvents = async (req, res) => {
                 name : true, 
                 desc : true, 
                 links : true,
+                info : true ,
+                img : true, 
+                createdAt : true ,
             }
         )
 
