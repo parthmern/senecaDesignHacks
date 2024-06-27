@@ -16,8 +16,8 @@ async function uploadFileToCloudinary(file, folder, quality) {
 
 const createEvent = async (req, res) => {
     try {
-        const { name, desc, links } = req.body;
-        console.log("{name, desc, links} =>", { name, desc, links });
+        const { name, desc, links, createdAt, info, location } = req.body;
+        console.log("{name, desc, links, createdAt, info, location} =>", { name, desc, links, createdAt, info, location });
 
         console.log("req.files=>", req.files, req.body.imageFile);
         const file = req.files.imageFile || req.body.imageFile;
@@ -32,6 +32,8 @@ const createEvent = async (req, res) => {
             desc,
             img : uploaded.secure_url ,
             links,
+            createdAt, 
+            info
         });
 
         console.log("✅ createdEvent =>", createdEvent);
@@ -62,6 +64,7 @@ const getAllEvents = async (req, res) => {
                 info : true ,
                 img : true, 
                 createdAt : true ,
+                location : true ,
             }
         )
 
@@ -89,4 +92,39 @@ const getAllEvents = async (req, res) => {
     }
 };
 
-module.exports = { createEvent, getAllEvents };
+const getOneEventDetail = async (req, res) =>{
+    try{
+
+        const {id} = req.body ;
+        console.log("event id=>", id);
+
+        const eventDetail = await events.find(
+            {
+                _id : id
+            }
+        );
+
+        console.log(eventDetail);
+
+        return(
+            res.status(200).json(
+                {
+                    success : true ,
+                    message : "event details fetched successsfully" ,
+                    eventDetail ,
+                }
+            )
+        )
+
+    }
+    catch(error){
+        console.log("🚫 getAllEvents error=>", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "getAllEvents Failed",
+        });
+    }
+}
+
+module.exports = { createEvent, getAllEvents, getOneEventDetail };

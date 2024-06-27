@@ -24,6 +24,10 @@ const eventSchema = new mongoose.Schema(
             type : String ,
         },
 
+        location : {
+            type : String ,
+        },
+
         links: [
             {
                 title: {

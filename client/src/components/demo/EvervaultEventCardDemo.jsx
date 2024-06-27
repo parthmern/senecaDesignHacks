@@ -1,10 +1,13 @@
 import React from "react";
 import moment from "moment";
 import { EvervaultCard, Icon } from "../ui/evervault-card";
+import { useNavigate } from "react-router-dom";
 
 export function EvervaultCardDemo({event}) {
+    const navigate = useNavigate();
+    console.log(event?.id);
   return (
-    <div className="border bg-gradient-to-tr from-purple-400/10 to-transparent/5 border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative h-[25rem] w-[25rem] ">
+    <div onClick={()=>{navigate(`/event/${event?._id}`)}} className="border cursor-pointer bg-gradient-to-tr from-purple-400/10 to-transparent/5 border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative h-[25rem] w-[25rem] ">
       <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />

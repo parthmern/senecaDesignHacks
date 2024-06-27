@@ -4,10 +4,12 @@ import { event, getAllEvents, url } from '../../services/apis';
 import { apiConnector } from '../../services/apiConnector';
 import { EventCardDemo } from '../demo/eventCardDemo';
 import { EvervaultCardDemo } from '../demo/EvervaultEventCardDemo';
+import { useNavigate } from 'react-router-dom';
 
 const EventsPage = () => {
 
     const [events, setEvents] = useState(null);
+    const navigate = useNavigate();
 
     async function fetchAllEvents(){
         try{
@@ -42,7 +44,7 @@ const EventsPage = () => {
                   <>{
                     index == 0 && (<div className="absolute -top-4 -z-10 flex w-full justify-center"><div className="h-[310px] w-[310px] max-w-full animate-pulse-slow rounded-full bg-[#8678F9] opacity-20 blur-[100px]"></div></div>)
                   }
-                  <EvervaultCardDemo key={event.id} event={event} />
+                  <EvervaultCardDemo  key={event.id} event={event} />
                   </>
                 
                   
