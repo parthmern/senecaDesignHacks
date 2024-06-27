@@ -8,7 +8,7 @@ const categorySchema = new Schema({
   },
   info: {
     type: String,
-    required: true
+    
   },
   workshops: [{
     type: mongoose.Schema.Types.ObjectId,
