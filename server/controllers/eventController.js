@@ -33,7 +33,8 @@ const createEvent = async (req, res) => {
             img : uploaded.secure_url ,
             links,
             createdAt, 
-            info
+            info,
+            location
         });
 
         console.log("✅ createdEvent =>", createdEvent);
@@ -56,16 +57,7 @@ const getAllEvents = async (req, res) => {
     try {
 
         const allEvents = await events.find(
-            {},
-            {
-                name : true, 
-                desc : true, 
-                links : true,
-                info : true ,
-                img : true, 
-                createdAt : true ,
-                location : true ,
-            }
+            {}
         )
 
         const totalEvents = allEvents.length ;
@@ -127,4 +119,4 @@ const getOneEventDetail = async (req, res) =>{
     }
 }
 
-module.exports = { createEvent, getAllEvents, getOneEventDetail };
+module.exports = { createEvent, getAllEvents, getOneEventDetail };   

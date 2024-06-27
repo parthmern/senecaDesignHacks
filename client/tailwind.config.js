@@ -26,8 +26,13 @@ export default {
         fifth: "moveInCircle 20s ease infinite",
         backgroundPositionSpin: "background-position-spin 3000ms infinite alternate",
         move: "move 5s linear infinite",
+        'background-shine': 'background-shine 6s linear infinite',
       },
       keyframes: {
+        'background-shine': {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '-500% 0' },
+        },
         moveHorizontal: {
           "0%": {
             transform: "translateX(-50%) translateY(-10%)",
