@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { apiConnector } from "../../services/apiConnector";
 import { url } from "../../services/apis";
 import GradOne from "../common/GradOne";
 import { GradMid } from "../common/GradMid";
 import { GradTwo } from "../common/GradTwo";
 import { Icon } from "../ui/evervault-card";
+import { EvervaultCardDemo } from "../demo/EvervaultEventCardDemo";
 
 const SingleCategoryPage = () => {
   const { id } = useParams();
+
+  const navigate = useNavigate();
 
   const [category, setCategory] = useState(null);
 
@@ -39,12 +42,16 @@ const SingleCategoryPage = () => {
       <div
         data-orientation="horizontal"
         role="none"
-        className="mb-8 bgLuv shrink-0 bg-border h-[1px] w-[60%] mx-auto"
+        className=" bgLuv shrink-0 bg-border h-[1px] w-[60%] mx-auto"
       ></div>
-
+    
       <GradOne />
       <GradMid />
       <GradTwo />
+
+      <div className="w-full mt-3 mb-8 flex items-center justify-center mx-auto">
+      <p className="text-white productFont capitalize mx-auto"><span className="cursor-pointer" onClick={()=>{navigate("/")}}>Home</span>  &gt; <span className="cursor-pointer" onClick={()=>{navigate("/resources")}}>resources</span> &gt; <span className="text-pink-300 ">category ( {category?.name} )</span></p>
+      </div>
 
       <div>
         <div className="border blurEffect border-white/[0.2] flex flex-col items-start w-[50%] mx-auto p-4 relative ">
@@ -57,6 +64,12 @@ const SingleCategoryPage = () => {
             {category?.info}
           </h2>
         </div>
+      </div>
+
+      <div className="flex items-center justify-center w-[80%] mx-auto mt-16 gap-x-5 ">
+        {category?.workshops.map((wp) => {
+          return <EvervaultCardDemo event={wp} />;
+        })}
       </div>
     </div>
   );
