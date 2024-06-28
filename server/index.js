@@ -55,11 +55,11 @@ cloudinaryConnect();
 // routes
 const eventRoute = require("./routes/eventRoute");
 const categroryRoute = require("./routes/categoryRoute");
+const workshopRoute = require("./routes/workshopRoute");
 
 app.use("/event", eventRoute);
 app.use("/category", categroryRoute);
-
-
+app.use("/workshop", workshopRoute);
 
 
 app.listen(3000, ()=>{
