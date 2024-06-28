@@ -3,12 +3,12 @@ import moment from "moment";
 import { EvervaultCard, Icon } from "../ui/evervault-card";
 import { useNavigate } from "react-router-dom";
 
-export function EvervaultCardDemo({event}) {
+export function EvervaultCardDemo({event, catName = null}) {
     const navigate = useNavigate();
     console.log(event?.id);
   return (
     <div onClick={()=>{
-        (event?.desc) ? navigate(`/event/${event?._id}`) : navigate(`/workshop/${event?._id}`)
+        (event?.desc) ? navigate(`/event/${event?._id}`) : navigate(`/${catName.replace(/ /g, "-")}/workshop/${event?._id}`)
     }} className={`border cursor-pointer bg-gradient-to-tr from-purple-400/10 to-transparent/5 border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative ${event?.desc ? "h-[25rem]" : "h-[20rem]"} w-[25rem] `}>
       <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />

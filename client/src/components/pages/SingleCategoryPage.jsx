@@ -66,9 +66,9 @@ const SingleCategoryPage = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-[80%] mx-auto mt-16 gap-x-5 ">
+      <div className="flex flex-wrap gap-8 items-center justify-center w-[80%] mx-auto mt-16 gap-x-5 ">
         {category?.workshops.map((wp) => {
-          return <EvervaultCardDemo event={wp} />;
+          return <EvervaultCardDemo event={wp} catName={category?.name} />;
         })}
       </div>
     </div>

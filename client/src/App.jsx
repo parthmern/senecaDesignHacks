@@ -21,7 +21,7 @@ function App() {
       <Route path="/event/:id" element={<SingleEventPage />}></Route>
       <Route path="/resources" element={<ResourcesPage />} ></Route>
       <Route path="/category/:id" element={<SingleCategoryPage />}></Route>
-      <Route path="/workshop/:id" element={<SingleWorkshopPage />}></Route>
+      <Route path="/:catName/workshop/:id" element={<SingleWorkshopPage />}></Route>
 
     </Routes>
     
