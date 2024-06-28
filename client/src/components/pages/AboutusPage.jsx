@@ -12,7 +12,7 @@ const AboutusPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative  z-[-50] ">
+    <div className="relative mb-20  z-[-50] ">
         <div onClick={()=>{navigate("/")}} className=' cursor-pointer glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
           <p onClick={()=>{navigate("/")}}>SDC</p>
         </div>

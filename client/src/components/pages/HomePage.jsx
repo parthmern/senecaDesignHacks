@@ -9,8 +9,12 @@ import ShinyButton from '../magicui/shiny-button';
 import Community from '../common/Community';
 import Aboutus from '../common/Aboutus';
 import { Footer } from '../common/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen mx-auto">
       <div className="relative w-full flex flex-col items-center">
@@ -42,8 +46,10 @@ const HomePage = () => {
 
       <div className="flex mt-5 items-center justify-center relative w-full h-64">
         <GlobeDemo />
-        <div className="z-[200] pt-[200px] flex items-center justify-center absolute">
-          <ShinyButton className="border border-black" text="✨ Join Now" />
+        <div onClick={()=>{
+        window.location.href = "https://linktr.ee/Seneca_SDC";
+    }} className="z-[200] pt-[200px] flex items-center justify-center absolute">
+          <ShinyButton   className="border border-black" text="✨ Join Now" />
         </div>
       </div>
 
