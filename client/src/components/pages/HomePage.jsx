@@ -8,6 +8,7 @@ import WordRotate from '../magicui/word-rotate';
 import ShinyButton from '../magicui/shiny-button';
 import Community from '../common/Community';
 import Aboutus from '../common/Aboutus';
+import { Footer } from '../common/Footer';
 
 const HomePage = () => {
   return (
@@ -50,9 +51,11 @@ const HomePage = () => {
         <Aboutus />
       </div>
 
-      <div>
+      <div className='h-full'>
         <Community />
       </div>
+
+      
     </div>
   )
 }

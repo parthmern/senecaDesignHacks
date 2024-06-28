@@ -9,21 +9,37 @@ import SingleEventPage from "./components/pages/SingleEventPage";
 import ResourcesPage from "./components/pages/ResourcesPage";
 import SingleCategoryPage from "./components/pages/SingleCategoryPage";
 import SingleWorkshopPage from "./components/pages/SingleWorkshopPage";
+import { Footer } from "./components/common/Footer";
+
 
 function App() {
   return (
 
+    <>
+    
     <Routes>
 
-      <Route path="/" element={<HomePage />} ></Route>
-      <Route path="/about" element={<AboutusPage/>} ></Route>
-      <Route path="/events" element={<EventsPage />}></Route>
-      <Route path="/event/:id" element={<SingleEventPage />}></Route>
-      <Route path="/resources" element={<ResourcesPage />} ></Route>
-      <Route path="/category/:id" element={<SingleCategoryPage />}></Route>
-      <Route path="/:catName/workshop/:id" element={<SingleWorkshopPage />}></Route>
+<Route path="/" element={<HomePage />} ></Route>
+<Route path="/about" element={<AboutusPage/>} ></Route>
+<Route path="/events" element={<EventsPage />}></Route>
+<Route path="/event/:id" element={<SingleEventPage />}></Route>
+<Route path="/resources" element={<ResourcesPage />} ></Route>
+<Route path="/category/:id" element={<SingleCategoryPage />}></Route>
+<Route path="/:catName/workshop/:id" element={<SingleWorkshopPage />}></Route>
 
-    </Routes>
+
+
+</Routes>
+
+
+
+    <div className='w-[100vw] bg-opacity-10  border-t  border-white/[0.2]'>
+        <Footer className={"bg-opacity-50"} />
+      </div>
+    </>
+
+   
+
     
         
     

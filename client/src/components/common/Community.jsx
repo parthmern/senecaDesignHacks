@@ -12,7 +12,7 @@ const Community = () => {
         className="font-display text-center font-bold tracking-[-0.02em] headingFont drop-shadow-sm text-white text-5xl md:leading-[5rem]"
       />
 
-    <div className="relative pb-20">
+    <div className="relative pb-40">
     <DockDemo />
     <div className="absolute left-56   blob"></div>
     </div>
