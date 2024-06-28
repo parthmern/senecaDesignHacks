@@ -48,7 +48,7 @@ const FloatingNav = ({
           className={`relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500`}
         >
           <span className="block hover:text-black sm:hidden">{navItem.icon}</span>
-          <span className="hidden hover:text-black sm:block text-sm">{navItem.name}</span>
+          <span className="hidden hover:font-semibold hover:text-black sm:block text-sm">{navItem.name}</span>
         </a>
       ))}
       

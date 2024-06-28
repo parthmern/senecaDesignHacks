@@ -5,6 +5,9 @@ import { apiConnector } from '../../services/apiConnector';
 import { EventCardDemo } from '../demo/eventCardDemo';
 import { EvervaultCardDemo } from '../demo/EvervaultEventCardDemo';
 import { useNavigate } from 'react-router-dom';
+import { GradMid } from '../common/GradMid';
+import GradOne from '../common/GradOne';
+import { GradTwo } from '../common/GradTwo';
 
 const EventsPage = () => {
 
@@ -37,6 +40,10 @@ const EventsPage = () => {
         <div className="pt-16 font-bold mb-3 text-lg md:text-6xl headingFont bg-clip-text text-transparent bg-gradient-to-b from-purple-300/90 to-white/90 text-center">
           Events
         </div>
+
+        <GradMid />
+        <GradOne />
+        <GradTwo />
 
         <div className='flex relative mx-auto mb-20 mt-10 items-center gap-20 gap-x-14 justify-center px-40 flex-wrap'>
             {events && events.map((event, index) => {

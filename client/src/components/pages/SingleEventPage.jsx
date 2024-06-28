@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { apiConnector } from '../../services/apiConnector';
 import { url, event as e } from '../../services/apis';
 import GradOne from '../common/GradOne';
@@ -11,6 +11,7 @@ import moment from "moment";
 const SingleEventPage = () => {
 
     const {id} = useParams();
+    const navigate = useNavigate();
 
     const [event, setEvent] = useState();
 
@@ -35,7 +36,9 @@ const SingleEventPage = () => {
         <GradMid />
         <GradTwo />
 
-        <div className='glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
+        <div onClick={()=>{
+            navigate("/")
+        }} className='glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
           SDC
         </div>
 
