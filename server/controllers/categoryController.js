@@ -89,7 +89,39 @@ const getAllCategories = async (req, res) =>{
 }
 
 
+const getCategoryDetails = async (req, res) =>{
+    try{
+
+        const {id} = req.body;
+
+        const catDetails = await Category.find(
+            {_id : id}
+        ).populate("workshops");
+
+        console.log(catDetails);
+
+        return(
+            res.status(200).json(
+                {
+                    success : true, 
+                    message : "getCategoryDetails true",
+                    catDetails ,
+                }
+            )
+        )
+
+    }
+    catch(error){
+        console.log("🚫 getCategoryDetails error=>", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "getCategoryDetails Failed",
+        });
+    }
+}
 
 
 
-module.exports = {createCategory, getAllCategories} ;
+
+module.exports = {createCategory, getAllCategories, getCategoryDetails} ;

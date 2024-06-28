@@ -7,6 +7,7 @@ import AboutusPage from "./components/pages/AboutusPage";
 import EventsPage from "./components/pages/EventsPage";
 import SingleEventPage from "./components/pages/SingleEventPage";
 import ResourcesPage from "./components/pages/ResourcesPage";
+import SingleCategoryPage from "./components/pages/SingleCategoryPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/events" element={<EventsPage />}></Route>
       <Route path="/event/:id" element={<SingleEventPage />}></Route>
       <Route path="/resources" element={<ResourcesPage />} ></Route>
+      <Route path="/category/:id" element={<SingleCategoryPage />}></Route>
 
     </Routes>
     

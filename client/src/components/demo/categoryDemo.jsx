@@ -4,22 +4,23 @@ import React, { useEffect, useState } from "react";
 import { cn } from "../../utils/cn";
 import { GoCopilot } from "react-icons/go";
 
-export function CategoryDemo() {
+export function CategoryDemo({cat}) {
   return (
     <Card className={'p-5 transition-all duration-200 cursor-pointer hover:border-white/[0.2] hover:bg-[#8678F9] hover:bg-opacity-20  '}>
       <CardSkeletonContainer>
-        <Skeleton />
+        <Skeleton logo={cat?.logo} />
       </CardSkeletonContainer>
-      <CardTitle className={'productFont'}>Damn good card</CardTitle>
-      <CardDescription className={'productFont'}>
-        A card that showcases a set of tools that you use to create your
-        product.
+      <CardTitle className={'productFont capitalize'}>{cat?.name}</CardTitle>
+      <CardDescription className={'productFont  '}>
+        {
+            cat?.info
+        }
       </CardDescription>
     </Card>
   );
 }
 
-const Skeleton = () => {
+const Skeleton = ({logo}) => {
   const scale = [1, 1.1, 1];
   const transform = ["translateY(0px)", "translateY(-4px)", "translateY(0px)"];
   const sequence = [
@@ -77,7 +78,7 @@ const Skeleton = () => {
       <div className="flex flex-row flex-shrink-0 justify-center items-center gap-2">
         
         <Container className="circle-0">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" />
+          <img src={logo} />
         </Container>
         
       </div>
