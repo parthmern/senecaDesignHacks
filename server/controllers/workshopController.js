@@ -28,6 +28,16 @@ const createWorkshop = async (req, res) =>{
         const uploaded = await uploadFileToCloudinary(file, "senecaDesignHacks");
         console.log("uploaded==>", uploaded.secure_url);
 
+        let parsedLinks;
+        try {
+            parsedLinks = JSON.parse(links); // Attempt to parse links
+            console.log(parsedLinks);
+        } catch (error) {
+            console.log("Invalid JSON format in links:", links);
+            return res.status(400).json({ message: 'Invalid links format' });
+        }
+
+
         // if (!Array.isArray(links) || !links.every(link => typeof link === 'object' && link.title && link.link)) {
         //     return res.status(400).json({ message: 'Invalid links format' });
         // }
@@ -43,7 +53,7 @@ const createWorkshop = async (req, res) =>{
             location,
             takenBy,
             info,
-            links : JSON.parse(links),
+            links : parsedLinks,
             img : uploaded.secure_url ,
           });
 

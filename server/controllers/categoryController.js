@@ -35,6 +35,8 @@ const createCategory = async (req, res) =>{
             }
         )
 
+        console.log("createdCategory", createdCategory);
+
         return(
             res.status(200).json(
                 {

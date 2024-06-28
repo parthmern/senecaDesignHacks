@@ -25,11 +25,20 @@ const createEvent = async (req, res) => {
         const uploaded = await uploadFileToCloudinary(file, "senecaDesignHacks");
         console.log("uploaded==>", uploaded.secure_url);
 
+        let parsedLinks;
+        try {
+            parsedLinks = JSON.parse(links); // Attempt to parse links
+            console.log(parsedLinks);
+        } catch (error) {
+            console.log("Invalid JSON format in links:", links);
+            return res.status(400).json({ message: 'Invalid links format' });
+        }
+
         const createdEvent = await events.create({
             name,
             desc,
             img : uploaded.secure_url ,
-            links,
+            links : parsedLinks,
             createdAt, 
             info,
             location

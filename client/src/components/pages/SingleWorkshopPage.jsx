@@ -92,6 +92,7 @@ const SingleWorkshopPage = () => {
               <p className='font-bold'>Taken by : </p>
               <p className=' capitalize'>{wp?.takenBy}</p>
               <p>On {moment(wp?.time).format('h:mm A : DD-MM-YYYY')}</p>
+              <p>At {wp?.location}</p>
             </h2>
           </div>
       </div>
