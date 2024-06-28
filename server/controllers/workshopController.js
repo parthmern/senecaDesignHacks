@@ -96,5 +96,34 @@ const getAllWorkshops = async (req, res) =>{
     }
 }
 
+const getDetailsOfSingleWorkshop = async(req, res) =>{
+    try{
 
-module.exports = {createWorkshop, getAllWorkshops};
+        const {id} = req.body ;
+
+        const wpDetails = await Workshop.find(
+            {_id : id}
+        )
+
+        return(
+            res.status(200).json(
+                {
+                    success : true ,
+                    message : "getDetailsOfSingleWorkshop done",
+                    wpDetails
+                }
+            )
+        )
+
+    }
+    catch(error){
+        console.log("🚫 getDetailsOfSingleWorkshop error=>", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "getDetailsOfSingleWorkshop Failed",
+        });
+    }
+}
+
+module.exports = {createWorkshop, getAllWorkshops, getDetailsOfSingleWorkshop};
