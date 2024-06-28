@@ -7,7 +7,7 @@ const Community = () => {
   return (
     <div className="overflow-hidden">
       <VelocityScroll
-        text="Be part of our community "
+        text="Be part of our community >> 💚 "
         default_velocity={5}
         className="font-display text-center font-bold tracking-[-0.02em] headingFont drop-shadow-sm text-white text-5xl md:leading-[5rem]"
       />

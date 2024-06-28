@@ -5,12 +5,16 @@ import { GridSmallBackgroundDemo } from "../demo/gridSmallBgDemo";
 import GradOne from "../common/GradOne";
 import { GradMid } from "../common/GradMid";
 import { GradTwo } from "../common/GradTwo";
+import { useNavigate } from "react-router-dom";
 
 const AboutusPage = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="relative  z-[-50] ">
-        <div className='glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
-          SDC
+        <div onClick={()=>{navigate("/")}} className=' cursor-pointer glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
+          <p onClick={()=>{navigate("/")}}>SDC</p>
         </div>
         <div className="opacity-30 ">
         <GridSmallBackgroundDemo className=" bg-opacity-25 " />

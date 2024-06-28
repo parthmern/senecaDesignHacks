@@ -30,7 +30,7 @@ const EventsPage = () => {
 
   return (
     <div className='relative '>
-        <div className='glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
+        <div onClick={()=>{navigate("/")}} className=' cursor-pointer glow z-[1000] text-white text-3xl absolute left-20 top-10 japanFont'>
           SDC
         </div>
 
