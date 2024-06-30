@@ -16,9 +16,8 @@ const EventsPage = () => {
 
     async function fetchAllEvents(){
         try{
-            const res = await apiConnector("GET", url + event + getAllEvents, {
-              "Content-Type": "application/json",
-              "withCredentials": true
+            const res = await apiConnector("GET", url + event + getAllEvents, null ,{
+              withCredentials : false,
             });
             console.log("res=>", res);
             setEvents(res?.data?.allEvents);
