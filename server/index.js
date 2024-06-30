@@ -28,7 +28,7 @@ const corsOptions = {
 };
 
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 const fileUpload = require("express-fileupload");
 app.use(
