@@ -5,20 +5,9 @@ const app = express();
 
 const dbConnect = require("./config/dbConnect");
 
+
 // 💙Middlewares -------------------------------------------------
-const bodyParser = require("body-parser");
-app.use(bodyParser.json());
-app.use(express.json());
 
-
-// app.use(express.urlencoded({
-
-// extended: true
-
-// }));
-
-const cookieParser = require("cookie-parser");
-app.use(cookieParser());
 const cors = require("cors");
 const corsOptions = {
     // origin: 'http://localhost:5173',
@@ -35,6 +24,21 @@ const corsOptions = {
 
 
 app.use(cors(corsOptions));
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(express.json());
+
+
+// app.use(express.urlencoded({
+
+// extended: true
+
+// }));
+
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
 
 
 
