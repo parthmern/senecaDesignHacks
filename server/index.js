@@ -29,32 +29,15 @@ const corsOptions = {
     // origin:'http://localhost:5173/', 
     // credentials:true,            //access-control-allow-credentials:true
     // optionSuccessStatus:200
-    origin : "*"
+    origin : "http://localhost:5173",
+    methods: 'GET, POST, PUT, DELETE, OPTIONS',
 };
 
 
-// app.use(cors(corsOptions));
-//app.options('*', cors(corsOptions)); // Enable preflight across all routes
-
-// app.use(cors({
-//     origin: "http://localhost:5173",
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type', 'Authorization'],
-//     credentials: true
-//     }));
+app.use(cors(corsOptions));
 
 
 
-app.use((res,next)=>{
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Max-Age", "1800");
-    res.setHeader("Access-Control-Allow-Headers", "content-type");
-    res.setHeader("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, PATCH, OPTIONS");
-    next();
-    });
-    
-    
 
 
 const fileUpload = require("express-fileupload");
