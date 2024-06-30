@@ -21,13 +21,18 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 const cors = require("cors");
 const corsOptions = {
-    origin: 'http://localhost:5173',
-    credentials: true,
-    methods: 'GET, POST, PUT, DELETE, OPTIONS',
-    allowedHeaders: 'Content-Type, Authorization',
+    // origin: 'http://localhost:5173',
+    // credentials: true,
+    // methods: 'GET, POST, PUT, DELETE, OPTIONS',
+    // allowedHeaders: 'Content-Type, Authorization',
+
+    origin:'http://localhost:5173', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
 };
 
-app.use(cors());
+
+app.use(cors(corsOptions));
 
 const fileUpload = require("express-fileupload");
 app.use(
