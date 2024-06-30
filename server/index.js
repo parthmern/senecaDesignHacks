@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 
-app.use(express.urlencoded({
+// app.use(express.urlencoded({
 
-extended: true
+// extended: true
 
-}));
+// }));
 
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
@@ -27,8 +27,7 @@ const corsOptions = {
     allowedHeaders: 'Content-Type, Authorization',
 };
 
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 const fileUpload = require("express-fileupload");
 app.use(
