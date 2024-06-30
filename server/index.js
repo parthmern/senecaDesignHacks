@@ -21,7 +21,7 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 const cors = require("cors");
 const corsOptions = {
-    origin: 'http://localhost:5173/',
+    origin: 'http://localhost:5173',
     allowedHeaders: ["Content-Type", "Authorization", "withCredentials"], // Include withCredentials in allowedHeaders
     credentials: true,
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
