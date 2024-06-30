@@ -27,8 +27,8 @@ const corsOptions = {
     // allowedHeaders: 'Content-Type, Authorization',
 
     origin:'http://localhost:5173', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
+    // credentials:true,            //access-control-allow-credentials:true
+    // optionSuccessStatus:200
 };
 
 
