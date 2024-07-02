@@ -1,8 +1,5 @@
-- landing page (done)
-- about page (done)
+- how to start
 
-- event page - for admin to do changes - features like  event name, desc, time, links section
-- event details page 
-
-- newsletter and joined people's mail sender
-- 
+- `git clone https://github.com/parthmern/senecaDesignHacks.git` to clone this repo in ur local machine
+- `cd client` then `npm run dev` to run frontend
+- `cd server` then `npm run dev` to run backend
